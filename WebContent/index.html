@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title>Coupon System-Login</title>
+    <!-- <link type="text/css" href="StyleSheet1.CSS" -->
+    <script type="text/javascript">
+        function SendLogin() {
+            var u = document.getElementById("user");
+            var p = document.getElementById("pass");
+            var f = document.getElementById("facade");
+            var str = "Go To Login";
+            var s = "http://localhost:8080/CouponSystemWEB/rest/" + f.value + "/" + f.value + "Login?" + "user=" + u.value + "&pass=" + p.value;
+            //alert(s);
+            //window.open(s, "_self");
+            //var strLink = str.link(s);
+            // if ($(".caty").find(".active-cat").length > 0) {
+            var facadePage = window.open(s ,"_parent" /*, "_self" */);
+            // }
+            //else {
+            //    alert('Aloha!!!');
+            //}
+        } 
+    </script>
+</head>
+<!--  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script> -->
+<body background="pictures/pic.jpg" title="Red Children using Coupons too">
+    <div ng-app="couponSystemWEB">
+        <h1 align="center" style="background-color: #00FFFF">
+            Welcome to Coupon System</h1>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <form id="loginForm" method="get" target="_self" align="center">
+            <input type="text" style="width: 100pt" id="user" name="user" placeholder="user name"
+                required size="20" maxlength="20" title="Enter your user name"><br />
+            <input type="password" style="width: 100pt" id="pass" name="pass" placeholder="password"
+                required size="20" maxlength="20" title="Enter your chosen password"><br />
+            <select id="facade" style="width: 102pt" placeholder="password" required ng-model="type"
+                title="Enter your user type (Customer/Company or Administrator)..." value="Customer">
+                <option selected="selected" value="customer">Customer</option>
+                <option value="admin">Administrator</option>
+                <option value="company">Company</option>
+            </select><br />
+            <button name="subject" value="buttonClick" style="width: 102pt" onclick="SendLogin()">Login</button>
+             &nbsp;
+        </form>
+        <!-- <script> -->
+        <!--  function myFunction() {
+        <!--    <form action="http://localhost:8080/CouponSystemWEB/rest/admin/adminLogin" method="post">
+			  <input name="say" value="Hi">
+			  <input name="to" value="Mom">
+			  <button>Send my greetings</button>
+			</form> -->
+        <!--  }-->
+        </script>
+        <br />
+        <h5 align="center">
+            <hr />
+            This site was created by <a href="http://localhost:8080/CouponSystemWEB/rest/admin/adminLogin?user=admin&pass=1234">
+                Ofer Moscovich</a> &copy; <a href="mailto:ofermoscovich@yahoo.com">עופר מוסקוביץ</a></h5>
+        <!-- <h3 visible="false">Hello {{user}} and Welocome!</h3> -->
+    </div>
+ 
+    <div>
+    </div>
+</body>
+</html>

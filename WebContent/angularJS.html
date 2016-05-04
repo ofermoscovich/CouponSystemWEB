@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" "http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+  <head>
+    <title>Angular Example</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+    <script type="text/javascript" src="controllers.js"></script>
+  </head>
+  <body>
+  <div ng-app="couponSystem" >
+  					<!-- screen 1 -->
+				   <div ng-controller="toDoController">
+
+            <input type="text" style="width: 100pt" id="user" name="user" placeholder="user name"
+                required size="20" maxlength="20" title="Enter your user name" ng-model="user"><br />
+            <input type="password" style="width: 100pt" id="pass" name="pass" placeholder="password"
+                required size="20" maxlength="20" title="Enter your chosen password" ng-model="pass"><br />
+            <select id="Select1" style="width: 102pt" placeholder="password" required ng-model="facade"
+                title="Enter your user type (Customer/Company or Administrator)..." value="Customer">
+                <option selected="selected" value="customer">Customer</option>
+                <option value="admin">Administrator</option>
+                <option value="company">Company</option>
+            </select><br />
+
+		 
+									
+									
+		<!--						<ul>
+									<li>{{ task.summary }}</li>
+									<li>{{ task.description }}</li>
+									</ul>
+                                    -->
+									<button style="width: 102pt" ng-click="login()">Login</button>
+                                    <div ng-show="resultLogin">
+                                    {{resultString}}
+                                    </div>
+            <!-- &nbsp;-->
+									<!--<button ng-click="showToDoDiv()">Show ToDo Div</button>-->
+									<div ng-show="showDiv">
+<!--										<table border="1">
+										  <tr ng-repeat="x in todo">
+										    <td>{{ x.summary }}</td>
+										    <td>{{ x.description }}</td>
+										  </tr>
+										</table>-->
+										
+                                   
+										<select ng-model="selectedSummary" ng-change="sendSummaryToServer()">   
+										 	<option ng-repeat="x in todo">{{x.summary}}</option>
+										</select>
+										
+										
+									</div>
+				</div>
+				<hr/>
+				<!-- screen 2 -->
+				<div ng-controller="otherController">
+				<font color="{{fontColor}}">{{processResult}}</font>
+				
+				
+				
+				
+				</div>
+				
+</div>
+  </body>
+</html>
